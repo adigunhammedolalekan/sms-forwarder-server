@@ -1,0 +1,15 @@
+version: "3"
+services:
+  database:
+    image: postgres:latest
+    container_name: sms-forwarder
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: manman
+      POSTGRES_DB: smsforwarder
+      PGDATA: /var/lib/postgresql/accounts/data/db
+    volumes:
+      - /Users/adigun/mnt/smsforwarder:/var/lib/postgresql/data
+    ports:
+      - "59003:5432"
